@@ -53,10 +53,10 @@ function initialize(){
 
 	//Cubes
 	cubeInfo = [
-		{xPos:-485, yPos:-100, zPos:0, size:10, name: "houses", url: "../houses/transition.html", color:0xf9f7ab},
-		{xPos:-350, yPos:-80, zPos:350, size:10, id: "mobile", url: "../mobile-clinic/transition.html", color:0xf0818f},
-		{xPos:-440, yPos:-80, zPos:-210, size:10, id: "goats", url: "../goats/transition.html", color:0xa4d4a6},
-		{xPos:-315, yPos:-60, zPos:-380, size:10, id: "clinic", url: "../clinic/transition.html", color:0x96add9}
+		{xPos:-485, yPos:-100, zPos:0, size:10, name: "houses", url: "../houses/landing.html", color:0xf9f7ab},
+		{xPos:-350, yPos:-80, zPos:350, size:10, id: "mobile", url: "../mobile-clinic/landing.html", color:0xf0818f},
+		{xPos:-440, yPos:-80, zPos:-210, size:10, id: "goats", url: "../goats/landing.html", color:0xa4d4a6},
+		{xPos:-315, yPos:-60, zPos:-380, size:10, id: "clinic", url: "../clinic/landing.html", color:0x96add9}
 	];
 	
 	for(var i=0; i<cubeInfo.length; i++){
