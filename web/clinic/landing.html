@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Gwo Foto - Primary Clinic</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="../css/reset.css">
+		<link rel="stylesheet" type="text/css" href="../css/video-player.css">
+		<link rel="stylesheet" type="text/css" href="../css/paragraph-reel.css">
+		<link rel="stylesheet" type="text/css" href="../css/fonts.css">
+	</head>
+	<body>
+		<!--Area description-->
+		<div id="paragraph-container">
+			<button id="paragraph-button" onclick="hideParagraph(); showTitle(); disableClick = false;"></button>
+			<p id="paragraph">
+				The Primary Clinic is located in the hills of Jérémie and is the hub of all the activities at the foundation. The facility opened in <span class="numbers">1988</span> as a dental clinic and has since expanded to include other primary health services such as x-ray, pharmacy, dental, general consultations, family planning, and even mental health. It currently serves over <span class="numbers">120,000</span> patients per year and is funded with private donations. 
+			</p>
+		</div>
+
+		<!--Looping audio for scene ambience-->
+		<audio id="soundtrack" src="media/audio.m4a" autoplay loop></audio>
+		
+		<!--Video player pops up when user clicks on a thumbnail in the scene-->
+		<div id="video-player">
+			<button id="x" onclick="hidePlayer();"></button>
+			<button id="toggle" onclick="toggleSubtitles();"></button>
+			<p id="subtitles"></p>
+			<video id="video" controls></video>
+		</div>
+		<div id="smoke-screen"></div>
+		
+		<!--Three Scene - Jon Regnarsson-->
+		<!--https://threejs.org/examples/webgl_panorama_equirectangular.html-->
+		<div id="container"></div>
+
+		<!--Scripts-->
+		<script type="text/javascript" src="../js/three.js"></script>
+		<script type="text/javascript" src="../js/elements/clinic-elements.js"></script>
+		<script type="text/javascript" src="../js/three-scene.js"></script>
+		<script type="text/javascript" src="../js/paragraph-reel.js"></script>
+		<script type="text/javascript" src="../js/video-player.js"></script>
+		<script type="text/javascript" src="../js/subtitles/dentist-subtitles.js"></script>
+		<script type="text/javascript" src="../js/subtitles/clinic-subtitles.js"></script>
+		<script type="text/javascript">
+			//Local Storage
+			var $paragraphContainer = document.getElementById("paragraph-container");
+			var $smokeScreen = document.getElementById("smoke-screen");
+
+			if(localStorage.getItem("clinicIntro") == "played"){
+				disableClick = false;
+				$smokeScreen.style.display = "none";
+				showTitle();
+			}
+			if(localStorage.getItem("clinicIntro") == "waiting"){
+				disableClick = true;
+				$paragraphContainer.style.display = "block";
+				$smokeScreen.style.display = "block";
+				localStorage.setItem("clinicIntro", "played");
+			}
+
+			localStorage.setItem("location4", "visited");
+		</script>
+	</body>
+</html>

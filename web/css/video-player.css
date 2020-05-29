@@ -1,0 +1,58 @@
+#smoke-screen{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: black;
+	opacity: 0;
+	transition: opacity 1s;
+}
+#video-player{
+	position: fixed;
+	bottom: calc((100vh - 45vw)/2);
+	left: 10vw;
+	width: 80vw;
+	height: 45vw;
+	background: grey;
+	display: none;
+	z-index: 50;
+}
+video{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: auto;
+}
+#x{
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 36px;
+	height: 36px;
+	font-size: 10px;
+	background: url('symbols/x.png');
+	background-size: 24px 24px;
+	background-position: center;
+	background-repeat: no-repeat;
+	z-index: 200;
+}
+#toggle{
+	position: absolute;
+	top: 36px;
+	right: 0;
+	width: 36px;
+	height: 36px;
+	font-size: 10px;
+	background: none;
+	font-size: 14px;
+	z-index: 200;
+	color: white;
+}
+#subtitles{
+	position: absolute;
+	left: 25%;
+	bottom: 10%;
+	width: 50%;
+	font-size: 50px;
+	z-index: 200;
+}

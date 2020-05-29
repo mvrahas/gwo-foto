@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Gwo Foto - Goats</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="../css/reset.css">
+		<link rel="stylesheet" type="text/css" href="../css/video-player.css">
+		<link rel="stylesheet" type="text/css" href="../css/paragraph-reel.css">
+		<link rel="stylesheet" type="text/css" href="../css/fonts.css">
+	</head>
+	<body>
+		<!--Area description-->
+		<div id="paragraph-container">
+			<button id="paragraph-button" onclick="hideParagraph(); showTitle(); disableClick = false;"></button>
+			<p id="paragraph">
+				Today, the foundation is distributing female breeding goats to families in the small town of Moron. This economic development program has a double benefit, as these goats not only provide food in the short-term but also opportunities to generate wealth in the long-term. Livestock represents an important source of wealth in Haiti, so these goats are much like low-risk loans that families can use to establish some financial security and start microenterprises. Unfortunately, not everybody can get an animal, but preference is given to those who demonstrate need as well as drive to turn opportunity into reality.
+			</p>
+		</div>
+
+		<!--Looping audio for scene ambience-->
+		<audio id="soundtrack" src="media/audio.m4a" autoplay loop></audio>
+		
+		<!--Video player pops up when user clicks on a thumbnail in the scene-->
+		<div id="video-player">
+			<button id="x" onclick="hidePlayer();"></button>
+			<button id="toggle" onclick="toggleSubtitles();"></button>
+			<p id="subtitles"></p>
+			<video id="video" controls></video>
+		</div>
+		<div id="smoke-screen"></div>
+		
+		<!--Three Scene - Jon Regnarsson-->
+		<!--https://threejs.org/examples/webgl_panorama_equirectangular.html-->
+		<div id="container"></div>
+
+		<!--Scripts-->
+		<script type="text/javascript" src="../js/three.js"></script>
+		<script type="text/javascript" src="../js/elements/goats-elements.js"></script>
+		<script type="text/javascript" src="../js/three-scene.js"></script>
+		<script type="text/javascript" src="../js/paragraph-reel.js"></script>
+		<script type="text/javascript" src="../js/video-player.js"></script>
+		<script type="text/javascript" src="../js/subtitles/goats-subtitles.js"></script>
+		<script type="text/javascript">
+			//Local Storage
+			var $paragraphContainer = document.getElementById("paragraph-container");
+			var $smokeScreen = document.getElementById("smoke-screen");
+
+			if(localStorage.getItem("goatsIntro") == "played"){
+				disableClick = false;
+				$smokeScreen.style.display = "none";
+				showTitle();
+			}
+			if(localStorage.getItem("goatsIntro") == "waiting"){
+				disableClick = true;
+				$paragraphContainer.style.display = "block";
+				$smokeScreen.style.display = "block";
+				localStorage.setItem("goatsIntro", "played");
+			}
+
+			localStorage.setItem("location3", "visited");
+		</script>
+	</body>
+</html>

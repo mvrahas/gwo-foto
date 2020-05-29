@@ -1,0 +1,57 @@
+@font-face {
+  font-family: 'Urban Elegance';
+  src: url('fonts/UrbanEleganceRegular.ttf');
+}
+@font-face {
+  font-family: 'numbers';
+  src: url('fonts/ostrich-regular.ttf');
+}
+@font-face {
+  font-family: 'candara';
+  src: url('fonts/Candara.ttf');
+}
+@font-face {
+  font-family: 'candaraBold';
+  src: url('fonts/CandaraBold.ttf');
+}
+
+body{
+	font-family: sans-serif;
+}
+h1{
+	font-size: 84px;
+}
+h2{
+	font-size: 22px;
+}
+h4{
+	font-size: 34px;
+	font-family: candaraBold;
+	text-align: center;
+}
+h5{
+	font-size: 24px;
+	font-family: candara;
+}
+h6{
+	font-size: 14px;
+	font-family: candaraBold;
+	text-align: center;
+	color:white;
+}
+p{
+	font-family: Urban Elegance;
+	font-size: 19px;
+}
+#subtitles{
+	font-family: candaraBold;
+	font-size: 46px;
+	color: white;
+	text-shadow: 2px 2px black;
+}
+.italic{
+	font-style: italic;
+}
+.numbers{
+	font-family: numbers, sans-serif;
+}
