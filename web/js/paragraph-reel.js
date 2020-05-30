@@ -6,4 +6,5 @@
 				$paragraph.style.display = "none";
 				$smoke.style.opacity = "0";
 				$paragraphButton.style.display = "none";
+				pauseInteractionWithScene(false)
 			}

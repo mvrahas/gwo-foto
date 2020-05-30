@@ -1,10 +1,10 @@
-var introduction = false;
+
 			//Three JS Components
 			var scene, camera, renderer;
 			//Three JS Raycasting
 			var raycaster, mouse, intersects;
 			//Dragging Functionality
-			var isUserInteracting = false, disableClick = false;
+			var isUserInteracting = false, disableScene = true;
 			onMouseDownMouseX = 0, onMouseDownMouseY = 0,
 			lon = 0, onMouseDownLon = 0,
 			lat = 0, onMouseDownLat = 0,
@@ -17,6 +17,7 @@ var introduction = false;
 			var img, plane;
 			//Container
 			var container = document.getElementById("container");
+
 
 			initialize();
 			animate();
@@ -92,11 +93,9 @@ var introduction = false;
 
 			//event functions
 			function onDocumentMouseDown(event){
-				if(disableClick == false){
+				if(disableScene == false){
+					isUserInteracting = true
 					event.preventDefault();
-					if(introduction === false){
-						isUserInteracting = true;
-					}
 					onPointerDownPointerX = event.clientX;
 					onPointerDownPointerY = event.clientY;
 					onPointerDownLon = lon;
@@ -115,7 +114,6 @@ var introduction = false;
 						if(intersects[0].object.clickable == true){
 							console.log(intersects[0].object.url)
 							showYouTubePlayer(intersects[0].object.url);
-							//disableClick = true;
 						}
 						if(intersects[0].object.back == true){
 							window.open("../map/index$.html", "_self");
@@ -123,7 +121,14 @@ var introduction = false;
 					}
 				}
 			}
+
+			function pauseInteractionWithScene(yesno) {
+				disableScene = yesno;
+			}
+
 			function onDocumentMouseMove(event){
+				if (disableScene == false) {
+
 				if ( isUserInteracting === true ) {
 					lon = ( onPointerDownPointerX - event.clientX ) * 0.1 + onPointerDownLon;
 					lat = ( event.clientY - onPointerDownPointerY ) * 0.1 + onPointerDownLat;
@@ -161,7 +166,9 @@ var introduction = false;
 					}
 				}
 				marker = intersects.length;
+				}
 			}
+
 			function onDocumentMouseUp(event){
 				isUserInteracting = false;
 			}
@@ -181,8 +188,9 @@ var introduction = false;
 			};
 
 			function update(){
+				console.log(disableScene)
 
-				if ( isUserInteracting === false && introduction === false) {
+				if ( isUserInteracting === false) {
 					lon += 0.00;
 				}
 				lat = Math.max( - 85, Math.min( 85, lat ) );
@@ -195,4 +203,5 @@ var introduction = false;
 				camera.lookAt(camera.target);
 				
 				renderer.render(scene, camera);
+
 			}
