@@ -113,8 +113,9 @@ var introduction = false;
 					intersects = raycaster.intersectObjects(scene.children, true);
 					if(intersects.length > 1){
 						if(intersects[0].object.clickable == true){
-							showPlayer(intersects[0].object.url, window[intersects[0].object.subtitles]);
-							disableClick = true;
+							console.log(intersects[0].object.url)
+							showYouTubePlayer(intersects[0].object.url);
+							//disableClick = true;
 						}
 						if(intersects[0].object.back == true){
 							window.open("../map/index$.html", "_self");
@@ -138,9 +139,7 @@ var introduction = false;
 				// calculate objects intersecting the picking ray
 				intersects = raycaster.intersectObjects(scene.children, true);
 
-				console.log("marker " +marker);
-				console.log("intersects " +intersects);
-				console.log("temp " +tempObject);
+
 				//for hover effect
 				if(marker != intersects.length && intersects != null){
 					if(hoverOn == false){

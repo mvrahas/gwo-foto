@@ -19,13 +19,9 @@
 
 		<!--Looping audio for scene ambience-->
 		<audio id="soundtrack" src="media/audio.m4a" autoplay loop></audio>
-		
-		<!--Video player pops up when user clicks on a thumbnail in the scene-->
-		<div id="video-player">
-			<button id="x" onclick="hidePlayer();"></button>
-			<button id="toggle" onclick="toggleSubtitles();"></button>
-			<p id="subtitles"></p>
-			<video id="video" controls></video>
+
+		<div onclick=hideYouTubePlayer() id="video-player-container">
+			<div id="player"></div>
 		</div>
 		<div id="smoke-screen"></div>
 		
@@ -38,9 +34,8 @@
 		<script type="text/javascript" src="../js/elements/mobile-elements.js"></script>
 		<script type="text/javascript" src="../js/three-scene.js"></script>
 		<script type="text/javascript" src="../js/paragraph-reel.js"></script>
-		<script type="text/javascript" src="../js/video-player.js"></script>
-		<script type="text/javascript" src="../js/subtitles/service-subtitles.js"></script>
-		<script type="text/javascript" src="../js/subtitles/zika-subtitles.js"></script>
+		<script type="text/javascript" src="../js/youtube-iframe-loader.js"></script>
+  		<script type="text/javascript" src="../js/show-and-hide-video-player.js"></script>
 		<script type="text/javascript">
 			//Local Storage
 			var $paragraphContainer = document.getElementById("paragraph-container");
