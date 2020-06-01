@@ -8,4 +8,6 @@ Subtitles for videos
 
 Autoplay audio for safari and firefox
 
-Restore link to HHF website
+Restore iFrame to HHF website. Remove HHF branding
+
+Get fonts working in internet explorer
