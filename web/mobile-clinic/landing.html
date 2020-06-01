@@ -11,7 +11,7 @@
 	<body>
 		<!--Area description-->
 		<div id="paragraph-container">
-			<button id="paragraph-button" onclick="hideParagraph(); showTitle(); disableClick = false;"></button>
+			<button id="paragraph-button" onclick="hideParagraph(); showTitle(); startAudio();"></button>
 			<p id="paragraph">
 				Welcome to the mobile clinic at Fond Bayard, a small village tucked away deep in the mountains. This facility brings primary health services such as consultations, pharmacy, vaccinations, and family planning, to people who would not otherwise have access given their remote location in the mountains. There is no public transportation in this village which means patients are a three hour walk away from the nearest hospital in Jérémie. Mobile clinics organized by the foundation are also a venue for health related education in topics such as childrearing, nutrition, food safety, recognizing bacterial infections and illnesses, family planning, hygiene and dental care, and more.
 			</p>
@@ -35,7 +35,8 @@
 		<script type="text/javascript" src="../js/three-scene.js"></script>
 		<script type="text/javascript" src="../js/paragraph-reel.js"></script>
 		<script type="text/javascript" src="../js/youtube-iframe-loader.js"></script>
-  		<script type="text/javascript" src="../js/show-and-hide-video-player.js"></script>
+		<script type="text/javascript" src="../js/show-and-hide-video-player.js"></script>
+		<script type="text/javascript" src="../js/initiate-audio.js"></script>
 		<script type="text/javascript">
 			//Local Storage
 			var $paragraphContainer = document.getElementById("paragraph-container");

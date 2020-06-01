@@ -11,7 +11,7 @@
 	<body>
 		<!--Area description-->
 		<div id="paragraph-container">
-			<button id="paragraph-button" onclick="hideParagraph(); showTitle(); disableClick = false;"></button>
+			<button id="paragraph-button" onclick="hideParagraph(); showTitle(); startAudio();"></button>
 			<p id="paragraph">
 				The Primary Clinic is located in the hills of Jérémie and is the hub of all the activities at the foundation. The facility opened in <span class="numbers">1988</span> as a dental clinic and has since expanded to include other primary health services such as x-ray, pharmacy, dental, general consultations, family planning, and even mental health. It currently serves over <span class="numbers">120,000</span> patients per year and is funded with private donations. 
 			</p>
@@ -35,9 +35,9 @@
 		<script type="text/javascript" src="../js/elements/clinic-elements.js"></script>
 		<script type="text/javascript" src="../js/three-scene.js"></script>
 		<script type="text/javascript" src="../js/paragraph-reel.js"></script>
-		<script type="text/javascript" src="../js/video-player.js"></script>
 		<script type="text/javascript" src="../js/youtube-iframe-loader.js"></script>
 		<script type="text/javascript" src="../js/show-and-hide-video-player.js"></script>
+		<script type="text/javascript" src="../js/initiate-audio.js"></script>
 		<script type="text/javascript">
 			//Local Storage
 			var $paragraphContainer = document.getElementById("paragraph-container");

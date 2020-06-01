@@ -1,0 +1,11 @@
+Add loading screens for faster loading of scenes
+
+Add pictures of the town of Jereme
+
+Replace triangular shapes with images in the main map
+
+Subtitles for videos
+
+Autoplay audio for safari and firefox
+
+Restore link to HHF website

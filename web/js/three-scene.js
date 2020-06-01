@@ -117,7 +117,6 @@
 					intersects = raycaster.intersectObjects(scene.children, true);
 					if(intersects.length > 1){
 						if(intersects[0].object.clickable == true){
-							console.log(intersects[0].object.url)
 							showYouTubePlayer(intersects[0].object.url);
 						}
 						if(intersects[0].object.back == true){
@@ -189,7 +188,6 @@
 			};
 
 			function update(){
-				console.log('dis  ' + disableScene + 'interact: ' + isUserInteracting)
 
 				if ( isUserInteracting === false) {
 					lon += 0.00;

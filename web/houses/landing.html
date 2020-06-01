@@ -11,7 +11,7 @@
 	<body>
 		<!--Area description-->
 		<div id="paragraph-container">
-			<button id="paragraph-button" onclick="hideParagraph(); showTitle(); disableClick = false;"></button>
+			<button id="paragraph-button" onclick="hideParagraph(); showTitle(); startAudio();"></button>
 			<p id="paragraph">
 				For the poorest families living in the greater Jérémie area, new homes can have a transformative effect on quality of life and well being. Having a stable and secure home to live in allows families, especially young children, to develop psychosocially and reach their full potential. Not everybody can be built a new house, but preference is given to families who are living in the most unfortunate circumstances, often in structures open to the elements.
 			</p>
@@ -37,6 +37,7 @@
 		<script type="text/javascript" src="../js/paragraph-reel.js"></script>
 		<script type="text/javascript" src="../js/youtube-iframe-loader.js"></script>
 		<script type="text/javascript" src="../js/show-and-hide-video-player.js"></script>
+		<script type="text/javascript" src="../js/initiate-audio.js"></script>
 		<script type="text/javascript">
 			//Local Storage
 			var $paragraphContainer = document.getElementById("paragraph-container");

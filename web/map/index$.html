@@ -216,7 +216,7 @@
 
 		<!--Intro Paragraph-->
 		<div id="paragraph-container">
-			<button class="hide" onclick="hideOverlay($paragraphContainer);"></button>
+			<button class="hide" onclick="hideOverlay($paragraphContainer); startAudio();"></button>
 			<p id="paragraph">
 				Welcome to Jérémie, Haiti, a small city in the southwest corner of the country. Accessible only by sea or by a long winding road through the mountains, it is rather isolated and healthcare services are limited. However, thanks to a nonprofit in the area called the Haitian Health Foundation, thousands of people are receiving the primary healthcare services they deserve and much more. Living a healthy life goes beyond access to quality healthcare services, and it depends on so many other social and economic factors. There are many pieces to the puzzle. In your exploration of Jérémie, you will piece together the determinants of a healthy community and discover how the Haitian Health Foundation is addressing the underlying inequalities that give rise to poverty and disease. Gwo Foto means “Big Picture” in the local language of Kreyòl, and hopefully learning about the foundation’s programs will help you understand health systems in a new way.
 			</p>
@@ -484,6 +484,7 @@
 				}
 
 		</script>
-		<audio src="media/theme.m4a" autoplay loop></audio>
+		<audio id="soundtrack" src="media/theme.m4a" autoplay loop></audio>
+		<script type="text/javascript" src="../js/initiate-audio.js"></script>
 	</body>
 </html>
