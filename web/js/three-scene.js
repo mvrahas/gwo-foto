@@ -91,6 +91,11 @@
 			document.addEventListener( 'mouseup', onDocumentMouseUp, false );
 			window.addEventListener( 'resize', onWindowResize, false );
 
+			function pauseInteractionWithScene(yesno) {
+				disableScene = yesno;
+				isUserInteracting = false;
+			}
+
 			//event functions
 			function onDocumentMouseDown(event){
 				if(disableScene == false){
@@ -120,10 +125,6 @@
 						}
 					}
 				}
-			}
-
-			function pauseInteractionWithScene(yesno) {
-				disableScene = yesno;
 			}
 
 			function onDocumentMouseMove(event){
@@ -188,7 +189,7 @@
 			};
 
 			function update(){
-				console.log(disableScene)
+				console.log('dis  ' + disableScene + 'interact: ' + isUserInteracting)
 
 				if ( isUserInteracting === false) {
 					lon += 0.00;
