@@ -43,12 +43,12 @@
 			var $smokeScreen = document.getElementById("smoke-screen");
 
 			if(localStorage.getItem("mobileIntro") == "played"){
-				disableClick = false;
+				disableScene = false;
 				$smokeScreen.style.display = "none";
 				showTitle();
 			}
 			if(localStorage.getItem("mobileIntro") == "waiting"){
-				disableClick = true;
+				disableScene = true;
 				$paragraphContainer.style.display = "block";
 				$smokeScreen.style.display = "block";
 				localStorage.setItem("mobileIntro", "played");

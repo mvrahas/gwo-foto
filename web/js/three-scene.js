@@ -4,7 +4,7 @@
 			//Three JS Raycasting
 			var raycaster, mouse, intersects;
 			//Dragging Functionality
-			var isUserInteracting = false, disableScene = true;
+			var isUserInteracting = false, disableScene = false;
 			onMouseDownMouseX = 0, onMouseDownMouseY = 0,
 			lon = 0, onMouseDownLon = 0,
 			lat = 0, onMouseDownLat = 0,

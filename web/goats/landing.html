@@ -44,12 +44,12 @@
 			var $smokeScreen = document.getElementById("smoke-screen");
 
 			if(localStorage.getItem("goatsIntro") == "played"){
-				disableClick = false;
+				disableScene = false;
 				$smokeScreen.style.display = "none";
 				showTitle();
 			}
 			if(localStorage.getItem("goatsIntro") == "waiting"){
-				disableClick = true;
+				disableScene = true;
 				$paragraphContainer.style.display = "block";
 				$smokeScreen.style.display = "block";
 				localStorage.setItem("goatsIntro", "played");
