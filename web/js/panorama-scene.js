@@ -7,7 +7,7 @@ var raycaster, mouse, intersects;
 //Dragging Functionality
 var isUserInteracting = false, disableClick = false;
 onMouseDownMouseX = 0, onMouseDownMouseY = 0,
-lon =0, onMouseDownLon = 0,
+lon = 90, onMouseDownLon = 0,
 lat = 0, onMouseDownLat = 0,
 phi = 0, theta = 0;
 //Globe
