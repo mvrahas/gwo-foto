@@ -12,7 +12,7 @@
 <body>
 	<div id="screen"></div>
 	<main>
-		<img src="welcome/title.png">
+		<img src="assets/welcome/title.png">
 		<section id="information">
 			<div id="about">
 				<p>Gwo Foto is an interactive documentary about the work of the Haitian Health Foundation, a non-profit organization that brings healthcare services, community development, and education to the city of Jérémie, Haiti, and its surrounding areas. The organization takes a holistic approach to well being that goes beyond improving the quality of health care services, also addressing the social and economic structures that give rise to poverty and disease. Even the most cutting edge medical technology cannot solve the simplest problems. If somebody does not have a secure house to live in, they certainly do not have the time to care for their teeth. If somebody does not have any formal education, they simply do not know how to avoid getting sick. If somebody does not have the social standing to get a job or build meaningful relationships, they cannot make enough money to eat well or get support to develop psychosocially. In this interactive documentary experience, users will discover these everyday realities in the developing world and piece together simple solutions that can have a big picture impact on life for all.
@@ -27,7 +27,7 @@
 		<nav>
 			<button onclick="showAbout();">ABOUT</button>
 			<button onclick="showCredits();">CREDITS</button>
-			<button onclick="window.open('map/index$.html', '_self');">ENTER</button>
+			<button onclick="window.open('map', '_self');">ENTER</button>
 		</nav>
 	</main>
 	<video id="vid" src="../videos/background.mp4" autoplay muted loop></video>
@@ -73,26 +73,28 @@
 	//Local Storage
 
 	//For the mobile clinic
-	localStorage.setItem("location1", "waiting");
-	localStorage.setItem("animation1", "waiting");
+	localStorage.setItem("mobileclinicLocation", "waiting");
 	localStorage.setItem("piece1", "waiting");
 	//For the houses
-	localStorage.setItem("location2", "waiting");
-	localStorage.setItem("animation2", "waiting");
+	localStorage.setItem("housesLocation", "waiting");
 	localStorage.setItem("piece2", "waiting");
 	//For the goats
-	localStorage.setItem("location3", "waiting");
-	localStorage.setItem("animation3", "waiting");
+	localStorage.setItem("goatsLocation", "waiting");
 	localStorage.setItem("piece3", "waiting");
 	//For the pep bondye clinic
-	localStorage.setItem("location4", "waiting");
-	localStorage.setItem("animation4", "waiting");
+	localStorage.setItem("clinicLocation", "waiting");
 	localStorage.setItem("piece4", "waiting");
 
 	localStorage.setItem("mapIntro", "waiting");
 	localStorage.setItem("goatsIntro", "waiting");
 	localStorage.setItem("housesIntro", "waiting");
-	localStorage.setItem("mobileIntro", "waiting");
+	localStorage.setItem("mobileclinicIntro", "waiting");
 	localStorage.setItem("clinicIntro", "waiting");
+
+	localStorage.setItem("animation1", "waiting")
+	localStorage.setItem("animation2", "waiting")
+	localStorage.setItem("animation3", "waiting")
+	localStorage.setItem("animation4", "waiting")
+
 </script>
 </html>

@@ -11,14 +11,14 @@
 	<body>
 		<!--Area description-->
 		<div id="paragraph-container">
-			<button id="paragraph-button" onclick="hideParagraph(); showTitle(); startAudio();"></button>
+			<button id="paragraph-button" onclick="hideParagraph(); addTitleToScene(); startAudio();"></button>
 			<p id="paragraph">
 				The Primary Clinic is located in the hills of Jérémie and is the hub of all the activities at the foundation. The facility opened in <span class="numbers">1988</span> as a dental clinic and has since expanded to include other primary health services such as x-ray, pharmacy, dental, general consultations, family planning, and even mental health. It currently serves over <span class="numbers">120,000</span> patients per year and is funded with private donations. 
 			</p>
 		</div>
 
 		<!--Looping audio for scene ambience-->
-		<audio id="soundtrack" src="media/audio.m4a" autoplay loop></audio>
+		<audio id="soundtrack" autoplay loop></audio>
 		
 		<!--Video player pops up when user clicks on a thumbnail in the scene-->
 		<div onclick=hideYouTubePlayer() id="video-player-container">
@@ -31,31 +31,18 @@
 		<div id="container"></div>
 
 		<!--Scripts-->
-		<script type="text/javascript" src="../js/three.js"></script>
-		<script type="text/javascript" src="../js/elements/clinic-elements.js"></script>
+        <script type="text/javascript" src="../js/scene-config.js"></script>
+		<script>
+			var pathname = window.location.pathname
+			var scene = pathname.replace("/", "")
+			loadScene(scene)
+		</script>
+        <script type="text/javascript" src="../js/three.js"></script>
 		<script type="text/javascript" src="../js/three-scene.js"></script>
 		<script type="text/javascript" src="../js/paragraph-reel.js"></script>
 		<script type="text/javascript" src="../js/youtube-iframe-loader.js"></script>
 		<script type="text/javascript" src="../js/show-and-hide-video-player.js"></script>
-		<script type="text/javascript" src="../js/initiate-audio.js"></script>
-		<script type="text/javascript">
-			//Local Storage
-			var $paragraphContainer = document.getElementById("paragraph-container");
-			var $smokeScreen = document.getElementById("smoke-screen");
-
-			if(localStorage.getItem("clinicIntro") == "played"){
-				disableScene = false;
-				$smokeScreen.style.display = "none";
-				showTitle();
-			}
-			if(localStorage.getItem("clinicIntro") == "waiting"){
-				disableScene = true;
-				$paragraphContainer.style.display = "block";
-				$smokeScreen.style.display = "block";
-				localStorage.setItem("clinicIntro", "played");
-			}
-
-			localStorage.setItem("location4", "visited");
-		</script>
+        <script type="text/javascript" src="../js/initiate-audio.js"></script>
+        <script type="text/javascript" src="../js/scene-interactivity.js"></script>
 	</body>
 </html>

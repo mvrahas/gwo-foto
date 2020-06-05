@@ -44,7 +44,7 @@
 				globeGeometry = new THREE.SphereGeometry( 500, 60, 40 );
 				globeGeometry.scale(-1,1,1);
 				panorama = new THREE.MeshBasicMaterial({
-						map: new THREE.TextureLoader().load("textures/test.jpg")
+						map: new THREE.TextureLoader().load(backgroundImagePath)
 					});
 				globe = new THREE.Mesh( globeGeometry, panorama );
 				scene.add( globe );
@@ -75,14 +75,19 @@
 
 				//Title
 				img = new THREE.MeshBasicMaterial({
-					map: new THREE.TextureLoader().load('textures/title.png')
+					map: new THREE.TextureLoader().load(titleImagePath)
         		});
         		plane = new THREE.Mesh(new THREE.PlaneGeometry(300,150),img);
         		plane.position.x = 200;
         		plane.position.y = 50;
         		plane.rotation.y = 4.71;
         		plane.material.transparent = true
-        		plane.material.opacity = 1;			
+				plane.material.opacity = 1;		
+				
+				if(showTitle){
+					scene.add(plane)
+				}
+
 			}
 
 			//event listeners
@@ -120,7 +125,7 @@
 							showYouTubePlayer(intersects[0].object.url);
 						}
 						if(intersects[0].object.back == true){
-							window.open("../map/index$.html", "_self");
+							window.open("../map", "_self");
 						}
 					}
 				}
@@ -178,9 +183,12 @@
 				renderer.setSize( window.innerWidth, window.innerHeight );
 			}
 
-			function showTitle(){
-				scene.add(plane);
+
+			function addTitleToScene() {
+				scene.add(plane)
 			}
+
+
 			//update frames and render
 			function animate(){
 				requestAnimationFrame( animate );
