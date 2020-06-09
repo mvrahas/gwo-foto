@@ -201,3 +201,13 @@
 				#banner-2{display: none;}
 				#banner-3{display: none;}
 				#banner-4{display: none;}
+
+#loading {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	opacity: 1;
+	transition: opacity 1s;
+	z-index: 200;
+}

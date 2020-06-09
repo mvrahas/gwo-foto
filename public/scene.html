@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Gwo Foto - Primary Clinic</title>
+		<title>Gwo Foto - Explore</title>
 		<meta charset="utf-8">
 		<link rel="stylesheet" type="text/css" href="../css/reset.css">
-		<link rel="stylesheet" type="text/css" href="../css/video-player.css">
+		<link rel="stylesheet" type="text/css" href="../css/scene.css">
 		<link rel="stylesheet" type="text/css" href="../css/paragraph-reel.css">
 		<link rel="stylesheet" type="text/css" href="../css/fonts.css">
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="/favicon.ico" type="image/x-icon">
 	</head>
 	<body>
 		<!--Area description-->
@@ -25,7 +27,9 @@
 			<div id="player"></div>
 		</div>
 		<div id="smoke-screen"></div>
+		
 		<div id="loading"></div>
+
 		<!--Three Scene - Jon Regnarsson-->
 		<!--https://threejs.org/examples/webgl_panorama_equirectangular.html-->
 		<div id="container"></div>
@@ -38,7 +42,11 @@
 			loadScene(scene)
 
 			window.onload = function(){ 
-				document.getElementById("loading").style.opacity = 0 
+				var $loader = document.getElementById("loading")
+				$loader.style.opacity = 0 
+				setTimeout(function() {
+        			$loader.style.display = 'none'
+				}, 1000);
 			}
 		</script>
         <script type="text/javascript" src="../js/three.js"></script>
@@ -47,6 +55,5 @@
 		<script type="text/javascript" src="../js/youtube-iframe-loader.js"></script>
 		<script type="text/javascript" src="../js/show-and-hide-video-player.js"></script>
         <script type="text/javascript" src="../js/initiate-audio.js"></script>
-        <script type="text/javascript" src="../js/scene-interactivity.js"></script>
 	</body>
 </html>

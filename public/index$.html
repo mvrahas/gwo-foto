@@ -7,6 +7,8 @@
 		<link rel="stylesheet" type="text/css" href="../css/paragraph-reel.css">
 		<link rel="stylesheet" type="text/css" href="../css/fonts.css">
 		<link rel="stylesheet" type="text/css" href="../css/map.css">
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="/favicon.ico" type="image/x-icon">
 	</head>
 	<body>
 
@@ -79,11 +81,11 @@
 		<!--HHF-->
 		<div id="hhf-container">
 			<button class="hide" onclick="hideOverlay($hhfContainer);"></button>
-			<iframe id="hhf-frame" src="http://www.haitianhealthfoundation.org/"></iframe>
 		</div>
 
 		<!--Smokescreen-->
 		<div id="smoke-screen"></div>
+		<div id="loading"></div>
 
 
 		<!--Dashboard-->
@@ -130,11 +132,21 @@
 		</div>
 		<div id="container"></div>
 		<!--Idea for this script came from Jon Regnarsson https://threejs.org/examples/webgl_panorama_equirectangular.html-->
+		<script> 
+			var audioPath = '/assets/map/theme.m4a'
+			window.onload = function(){ 
+				var $loader = document.getElementById("loading")
+				$loader.style.opacity = 0 
+				setTimeout(function() {
+        			$loader.style.display = 'none'
+				}, 1000);
+			}
+		</script>
 		<script type="text/javascript" src="../js/three.js"></script>
 		<script type="text/javascript" src="../js/panorama-scene.js"></script>
 		<script type="text/javascript" src="../js/paragraph-reel.js"></script>
 		<script type="text/javascript" src="../js/map-interactivity.js"></script>
-		<audio id="soundtrack" src="/assets/map/theme.m4a" autoplay loop></audio>
+		<audio id="soundtrack" autoplay loop></audio>
 		<script type="text/javascript" src="../js/initiate-audio.js"></script>
 	</body>
 </html>

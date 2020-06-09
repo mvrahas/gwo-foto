@@ -1,4 +1,4 @@
-			#paragraph-container{
+            #paragraph-container{
 				position: fixed;
 				top: 50%;
 				margin-top: -280px;
@@ -62,7 +62,7 @@
 				height: 30px;
 				background-color: white;
 			}
-			
+
 			#loading {
 				position: fixed;
 				width: 100%;

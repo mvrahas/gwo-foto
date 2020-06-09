@@ -17,13 +17,6 @@ var $billingContainer = document.getElementById("billing");
 var $smokeScreen = document.getElementById("smoke-screen");
 
 
-console.log('mobile clinic ' + localStorage.getItem("mobileclinicLocation"),localStorage.getItem("animation1"),localStorage.getItem("piece1"))
-console.log('goats ' + localStorage.getItem("goatsLocation"),localStorage.getItem("piece3"))
-console.log('houses ' + localStorage.getItem("housesLocation"),localStorage.getItem("piece2"))
-console.log('clinic ' + localStorage.getItem("clinicLocation"),localStorage.getItem("piece1"))
-
-
-
 if(localStorage.getItem("mapIntro") == "played"){
 	$smokeScreen.style.opacity = "0";
 	$dashboard.style.opacity = "1";
