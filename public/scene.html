@@ -25,7 +25,7 @@
 			<div id="player"></div>
 		</div>
 		<div id="smoke-screen"></div>
-		
+		<div id="loading"></div>
 		<!--Three Scene - Jon Regnarsson-->
 		<!--https://threejs.org/examples/webgl_panorama_equirectangular.html-->
 		<div id="container"></div>
@@ -36,6 +36,10 @@
 			var pathname = window.location.pathname
 			var scene = pathname.replace("/", "")
 			loadScene(scene)
+
+			window.onload = function(){ 
+				document.getElementById("loading").style.display = "none" 
+			}
 		</script>
         <script type="text/javascript" src="../js/three.js"></script>
 		<script type="text/javascript" src="../js/three-scene.js"></script>
