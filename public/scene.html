@@ -92,7 +92,21 @@
 			var scene = pathname.replace("/", "")
 			loadScene(scene)
 
+
+			var twoSecondsPassed = false
+			setTimeout(function(){
+				twoSecondsPassed = true
+				hideLoader()
+			}, 2000);
+
+			var pageHasLoaded = false
 			window.onload = function(){ 
+				pageHasLoaded = true
+				hideLoader()
+			}
+
+			hideLoader = function () {
+				if (twoSecondsPassed == true & pageHasLoaded == true)
 				var $loader = document.getElementById("loading")
 				var $spinner = document.getElementById("spinner")
 				$loader.style.opacity = 0

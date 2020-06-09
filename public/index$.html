@@ -185,7 +185,21 @@
 		<!--Idea for this script came from Jon Regnarsson https://threejs.org/examples/webgl_panorama_equirectangular.html-->
 		<script> 
 			var audioPath = '/assets/map/theme.m4a'
+			
+			var twoSecondsPassed = false
+			setTimeout(function(){
+				twoSecondsPassed = true
+				hideLoader()
+			}, 2000);
+
+			var pageHasLoaded = false
 			window.onload = function(){ 
+				pageHasLoaded = true
+				hideLoader()
+			}
+
+			hideLoader = function () {
+				if (twoSecondsPassed == true & pageHasLoaded == true)
 				var $loader = document.getElementById("loading")
 				var $spinner = document.getElementById("spinner")
 				$loader.style.opacity = 0
