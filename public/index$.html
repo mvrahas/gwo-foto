@@ -198,15 +198,16 @@
 				hideLoader()
 			}
 
+			var $loader = document.getElementById("loading")
+			var $spinner = document.getElementById("spinner")
 			hideLoader = function () {
-				if (twoSecondsPassed == true & pageHasLoaded == true)
-				var $loader = document.getElementById("loading")
-				var $spinner = document.getElementById("spinner")
-				$loader.style.opacity = 0
-				$spinner.style.display = 'none'
-				setTimeout(function() {
-        			$loader.style.display = 'none'
-				}, 1000);
+				if (twoSecondsPassed == true & pageHasLoaded == true) {
+					$loader.style.opacity = 0
+					$spinner.style.display = 'none'
+					setTimeout(function() {
+        				$loader.style.display = 'none'
+					}, 1000)
+				}
 			}
 		</script>
 		<script type="text/javascript" src="../js/three.js"></script>
