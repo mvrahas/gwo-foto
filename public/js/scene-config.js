@@ -61,15 +61,19 @@ var config = {
 var showTitle = false
 
 
+
 loadScene = function (sceneToLoad) {
     elementsInfo = config[sceneToLoad].sceneElements
     titleImagePath = config[sceneToLoad].titleImage
     backgroundImagePath = config[sceneToLoad].backgroundImage
     audioPath = config[sceneToLoad].audio
+    paragraphText = config[sceneToLoad].sceneParagraph
 
     //Local Storage
-    var $paragraphContainer = document.getElementById("paragraph-container");
-    var $smokeScreen = document.getElementById("smoke-screen");
+    var $paragraphContainer = document.getElementById("paragraph-container")
+    var $smokeScreen = document.getElementById("smoke-screen")
+    var $paragraph = document.getElementById("paragraph")
+    $paragraph.innerHTML = paragraphText
 
     if(localStorage.getItem(sceneToLoad + 'Intro') == "played"){
         disableScene = false;
