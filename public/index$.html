@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Gwo Foto - Jérémie</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="../css/reset.css">
+		<link rel="stylesheet" type="text/css" href="../css/paragraph-reel.css">
+		<link rel="stylesheet" type="text/css" href="../css/fonts.css">
+		<link rel="stylesheet" type="text/css" href="../css/map.css">
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="/favicon.ico" type="image/x-icon">
+		<style>
+			#loading {
+				position: fixed;
+				width: 100%;
+				height: 100%;
+				background-color: black;
+				opacity: 1;
+				transition: opacity 1s;
+				z-index: 200;
+			}
+			.lds-ring {
+				display: inline-block;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				width: 80px;
+				height: 80px;
+				margin-top: -40px;
+			}
+			.lds-ring div {
+			  box-sizing: border-box;
+			  display: block;
+			  position: absolute;
+			  width: 64px;
+			  height: 64px;
+			  margin: 8px;
+			  border: 8px solid #fff;
+			  border-radius: 50%;
+			  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+			  border-color: #fff transparent transparent transparent;
+			}
+			.lds-ring div:nth-child(1) {
+			  animation-delay: -0.45s;
+			}
+			.lds-ring div:nth-child(2) {
+			  animation-delay: -0.3s;
+			}
+			.lds-ring div:nth-child(3) {
+			  animation-delay: -0.15s;
+			}
+			@keyframes lds-ring {
+			  0% {
+				transform: rotate(0deg);
+			  }
+			  100% {
+				transform: rotate(360deg);
+			  }
+			}
+		</style>
+	</head>
+	<body>
+
+		<!--Intro Paragraph-->
+		<div id="paragraph-container">
+			<button class="hide" onclick="hideOverlay($paragraphContainer); startAudio();"></button>
+			<p id="paragraph">
+				Welcome to Jérémie, Haiti, a small city in the southwest corner of the country. Accessible only by sea or by a long winding road through the mountains, it is rather isolated and healthcare services are limited. However, thanks to a nonprofit in the area called the Haitian Health Foundation, thousands of people are receiving the primary healthcare services they deserve and much more. Living a healthy life goes beyond access to quality healthcare services, and it depends on so many other social and economic factors. There are many pieces to the puzzle. In your exploration of Jérémie, you will piece together the determinants of a healthy community and discover how the Haitian Health Foundation is addressing the underlying inequalities that give rise to poverty and disease. Gwo Foto means “Big Picture” in the local language of Kreyòl, and hopefully learning about the foundation’s programs will help you understand health systems in a new way.
+			</p>
+		</div>
+
+		<!--History-->
+		<div id="history-container">
+			<button class="hide" onclick="hideOverlay($historyContainer);"></button>
+			<img id="history-image" src="/assets/map/map.png">
+			<p id="history-paragraph">
+				Jérémie was founded in <span class="numbers">1756</span> at a time when the island of Hispaniola was under imperial control by the Spanish on the east (present day Dominican Republic) and the French on the west (present day Haiti). During this time in History, the colony of Saint Domingue was the richest colony in the French Empire, exporting <span class="numbers">40%</span> of all the sugar and <span class="numbers">60%</span> of all the coffee consumed in Europe. But the tremendous wealth was generated on the backs of over half a million slaves from Africa who worked on the plantations. Since Haiti gained independence in <span class="numbers">1804</span>, Jérémie has been know for its spirit of intellectual thought and creativity, and it is know as “The City of Poets” for the writers, poets, and historians who have come from the area. It could be that its isolation made it a perfect place for writing and undisturbed thought. Even today, Jérémie is only accessible by one road that winds through the mountains, making access to healthcare services outside of the area difficult. Other than the government run Hospital of St. Antoine, there are very few healthcare options, which is why the Haitian Health Foundation plays such an important role in the community.
+			</p>
+		</div>
+		<div id="donate-container">
+			<h4 id="donate-title">You Put Together the Puzzle!</h4>
+			<p>
+				Well done! You have pieced together some determinants of a healthy community, but the learning does not stop there. While this four piece puzzle outlines some important things to consider, there are countless other factors that are linked to health and well being - occupation, place of residence, age, sexual orientation, race, class, gender, and more. In this way, health is a product of identity, and you must look at the "big picture" in order to make real change in social systems that do not promote good health. Join the Haitian Health Foundation in its cause to bring a healthier life to the people of Jérémie by continuing to educate yourself about the issues that face the developping world or by giving a donation below.
+			</p>
+			<nav>
+				<button class="end-button" onclick="window.open('../welcome.html','_self')";>PLAY AGAIN</button><button class="end-button" onclick="$focusContainer.style.opacity = '1';">DONATE</button>
+			</nav>
+			<div id="focus" class="choose">
+				<h5>Choose an Area of Focus</h5>
+				<p>Have a purpose behind your gift by choosing the program you would like to support.</p>
+				<div id="puzzle-list">
+					<div class="puzzle-box" id="box-1" onclick="$contributionContainer.style.opacity = '1'";>
+						<h6>Education and<br>Prevention</h6>
+						<br>
+						<img src="/assets/map/piece1.png">
+					</div>
+					<div class="puzzle-box" id="box-2" onclick="$contributionContainer.style.opacity = '1'">
+						<h6>Social<br>Equality<br></h6>
+						<br>
+						<img src="/assets/map/piece2.png">
+					</div>
+					<div class="puzzle-box" id="box-3" onclick="$contributionContainer.style.opacity = '1'">
+						<h6>Economic<br>Development</h6>
+						<img src="/assets/map/piece3.png">
+					</div>
+					<div class="puzzle-box" id="box-4" onclick="$contributionContainer.style.opacity = '1'">
+						<h6>Primary<br>Healthcare</h6>
+						<img src="/assets/map/piece4.png">
+					</div>
+				</div>
+			</div>
+			<div id="contribution" class="choose">
+			<h5>Choose a Contribution</h5>
+				<button onclick="$billingContainer.style.opacity = '1'" class="contribution-button">1$</button>
+				<button onclick="$billingContainer.style.opacity = '1'" class="contribution-button">5$</button>
+				<button onclick="$billingContainer.style.opacity = '1'" class="contribution-button">10$</button>
+				<button onclick="$billingContainer.style.opacity = '1'" class="contribution-button">30$</button>
+				<button onclick="$billingContainer.style.opacity = '1'" class="contribution-button">50$</button>
+				<button onclick="$billingContainer.style.opacity = '1'" class="contribution-button">100$</button>
+				<button onclick="$billingContainer.style.opacity = '1'" class="contribution-button">Other</button>
+			</div>
+			<div id="billing" class="choose">
+				<h5>Billing Information</h5>
+				<p>This feature has not been developped yet, but it demonstrates how donations could be merged with the documentary experience in promotional media.</p>
+				<br>
+				<button id="submit" onclick="window.open('../welcome.html','_self');">SUBMIT</button>
+			</div>
+		</div>
+
+		<!--HHF-->
+		<div id="hhf-container">
+			<button class="hide" onclick="hideOverlay($hhfContainer);"></button>
+		</div>
+
+		<!--Smokescreen-->
+		<div id="smoke-screen"></div>
+		<div id="loading">
+			<div id="spinner" class="lds-ring"><div></div><div></div><div></div><div></div></div>
+		</div>
+
+
+		<!--Dashboard-->
+		<div id="dashboard">
+			<button class="nav-button" id="home" onclick="window.open('../welcome.html','_self');"></button>
+			<button class="nav-button" id="hhf" onclick="window.open('https://www.haitianhealthfoundation.org/')"></button>
+			<button class="nav-button" id="history" onclick="showOverlay($historyContainer);"></button>
+			<img id="title" src="/assets/map/title.png">
+			<div id="drag"></div>
+
+			<!--Puzzle-->
+			<div id="puzzle">
+			<div class="piece" id="piece-1" onclick="showOverlay($banner1);"></div>
+			<div class="piece" id="piece-2" onclick="showOverlay($banner2);"></div>
+			<div class="piece" id="piece-3" onclick="showOverlay($banner3);"></div>
+			<div class="piece" id="piece-4" onclick="showOverlay($banner4);"></div>
+		</div>
+		</div>
+
+		<!--Pop up animations-->
+		<div class="banner" id="banner-1">
+			<button class="hide" onclick="hide1();"></button>
+			<h4>Education and Prevention</h4>
+			<div class="animation" style="background: url('/assets/map/piece1.gif')"></div>
+			<p>Knowledge is power especially when it comes to preventing disease and keeping people healthy. Some good health practices may seem like common sense to us. If you do not brush your teeth, your teeth will fall out. If you do not put a bandaid over a cut, you may risk infection. If you leave food out, it could make you sick. These lessons - from our parents, teachers, and peers - that we take for granted are often lacking in underdeveloped countries, and can make a huge difference. In Haiti, <span class="numbers">24%</span> of all people are killed by infectious diseases, such as pneumonia, cholera, HIV, and tuberculosis, that can often be prevented by simple measures. In these cases, a little bit of education can have exponential impact not only keeping one person healthy but also all of those to which the disease could spread. In this way, knowledge is inevitably linked to good health. And since everybody wants to be healthy, all you need to do is pass on the knowledge.</p>
+		</div>
+		<div class="banner" id="banner-2">
+			<button class="hide" onclick="hide2();"></button>
+			<h4>Social Equality</h4>
+			<div class="animation" style="background: url('/assets/map/piece2.gif')"></div>
+			<p>Imagine living in a thatched roof house that is open to the elements without, running water, and prone to burglary. With these problems to worry about, it seems dubious that anybody would have time to think about such vanities as their personal hygiene, their education, or their social relationships. In this way, social circumstances are inextricably linked to well being, especially for children in their early years who develop as a product of their environment. In all developing countries, the health of children is a marker of societal health and the focus of many efforts by nonprofits and governments around the world. Children who grow up equal to other children with regards to their social circumstances - class, gender, etc. - can reach their full potential and live their healthiest lives.</p>
+		</div>
+		<div class="banner" id="banner-3">
+			<button class="hide" onclick="hide3();"></button>
+			<h4>Economic Development</h4>
+			<div class="animation" style="background: url('/assets/map/piece3.gif')"></div>
+			<p>Opportunity can lead to a better life for people, one of financial security, personal development, and fulfillment, factors that are linked to markers of societal health such as low infant mortality rate, and improvement in child health and nutrition. In a country like Haiti, with very little industry besides textiles and agriculture, opportunity is want especially for marginalized groups such as women or the elderly. Microloans, even besides those in the form of goats, provide chances for the standard of living to be raised for all, and the beneficiaries have been shown to deliver on their promises. Many microfinance lending organizations report repayment rates as high as <span class="numbers">98%</span>, higher than most commercial banks in the United States. Facts like these suggest that people do not need to be given success, they want to earn it for themselves. These opportunities can ultimately improve the health of the country.</p>
+		</div>
+		<div class="banner" id="banner-4">
+			<button class="hide" onclick="hide4();"></button>
+			<h4>Primary Healthcare</h4>
+			<div class="animation" style="background: url('/assets/map/piece4.gif')"></div>
+			<p>There are few hospitals in Haiti that can manage serious medical problems - like trauma, acute diarrhea, and food poising - but not all people will necessarily encounter these problems in their lifetime, especially if their bodies and minds have been conditioned to avoid these things in the first place. Prevention, as apposed to treatment, is at the heart of primary health services. Dental visits prevent gum disease and cavities. Vaccinations prevent infections by dangerous diseases. Psychiatric counseling prevents stress from evolving into something more serious. These simple services, when sought out and used regularly, prevent mild illnesses from becoming life-threatening in the future, and when they are available to everybody, there is less need to treat serious medical problems.</p>
+		</div>
+		<div id="container"></div>
+		<!--Idea for this script came from Jon Regnarsson https://threejs.org/examples/webgl_panorama_equirectangular.html-->
+		<script> 
+			var audioPath = '/assets/map/theme.m4a'
+			
+			var twoSecondsPassed = false
+			setTimeout(function(){
+				twoSecondsPassed = true
+				hideLoader()
+			}, 2000);
+
+			var pageHasLoaded = false
+			window.onload = function(){ 
+				pageHasLoaded = true
+				hideLoader()
+			}
+
+			var $loader = document.getElementById("loading")
+			var $spinner = document.getElementById("spinner")
+			hideLoader = function () {
+				if (twoSecondsPassed == true & pageHasLoaded == true) {
+					$loader.style.opacity = 0
+					$spinner.style.display = 'none'
+					setTimeout(function() {
+        				$loader.style.display = 'none'
+					}, 1000)
+				}
+			}
+		</script>
+		<script type="text/javascript" src="../js/three.js"></script>
+		<script type="text/javascript" src="../js/panorama-scene.js"></script>
+		<script type="text/javascript" src="../js/paragraph-reel.js"></script>
+		<script type="text/javascript" src="../js/map-interactivity.js"></script>
+		<audio id="soundtrack" autoplay loop></audio>
+		<script type="text/javascript" src="../js/initiate-audio.js"></script>
+	</body>
+</html>

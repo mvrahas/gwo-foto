@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Gwo Foto - Welcome</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/welcome.css">
+	<link rel="stylesheet" type="text/css" href="css/fonts.css">
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+</head>
+<body>
+	<div id="screen"></div>
+	<main>
+		<img src="assets/welcome/title.png">
+		<section id="information">
+			<div id="about">
+				<p>Gwo Foto is an interactive documentary about the work of the Haitian Health Foundation, a non-profit organization that brings healthcare services, community development, and education to the city of Jérémie, Haiti, and its surrounding areas. The organization takes a holistic approach to well being that goes beyond improving the quality of health care services, also addressing the social and economic structures that give rise to poverty and disease. Even the most cutting edge medical technology cannot solve the simplest problems. If somebody does not have a secure house to live in, they certainly do not have the time to care for their teeth. If somebody does not have any formal education, they simply do not know how to avoid getting sick. If somebody does not have the social standing to get a job or build meaningful relationships, they cannot make enough money to eat well or get support to develop psychosocially. In this interactive documentary experience, users will discover these everyday realities in the developing world and piece together simple solutions that can have a big picture impact on life for all.
+				<br><br>
+				Beyond educating users about important issues in global health, the project’s interactive format was designed with the intention of creating an immersive and engaging experience that brings users closer to the people and places of Haiti. Given so many natural disasters and health epidemics in the past ten years alone (<span class="numbers">2016</span> Hurricane Matthew, <span class="numbers">2010</span> Port-au-Prince Earthquake) Haiti has become known in the international media as a country of human suffering, poverty, and desperation. Even nonprofit organizations inadvertently reinforce this reputation in their fundraising efforts and promotional media, exploiting images of misery to trigger guilt, highlighting the stories and experiences of international volunteers rather than locals, and portraying their beneficiaries as hopeless beggars. Gwo Foto avoids these entrapments at all costs and hopefully provides a more honest perspective of Haiti from the voices of the locals themselves.</p>
+			</div>
+			<div id="credits">
+				<div id="credits-left"><p>Haiti National Director<br>Medical Director<br>Director of Community Health<br>Director of Community Development<br>Dentist<br><br>Music<br>Faculty Instructors<br><br>Provost Grant Advisor<br><br>Noun Project Graphics<br><br><br><br><br>Created by Mark Vrahas<br>USC School of Cinematic Arts<br>Media Arts and Practice Division<br><br>Funding by USC Provost<br>Undergraduate Research Grant</p></div>
+				<div id="credits-right"><p>Nadesha Mijoba<br>Dr. Royneld Bordeau<br>Casimir Alfred<br>Roxanne Dimanche<br>Dr. Sheri Ramylyn<br><br>Alex Biniaz-Harris<br>Michael Bodie<br>Dr. Elizabeth Ramsey<br>Dr. Kiki Benzon<br><br>Rafael Eidelwein<br>Mani Amini<br>YuguDesign<br>Pumpkin Juice</p></div>
+			</div>
+		</section>
+		<nav>
+			<button onclick="showAbout();">ABOUT</button>
+			<button onclick="showCredits();">CREDITS</button>
+			<button onclick="window.open('map', '_self');">ENTER</button>
+		</nav>
+	</main>
+</body>
+<script type="text/javascript">
+	var $information = document.getElementById("information");
+	var $credits = document.getElementById("credits");
+	var $about = document.getElementById("about");
+	var informationOpen = false;
+	var aboutOpen = false;
+	var creditsOpen = false;
+	
+	function showAbout(){
+		if(aboutOpen || informationOpen==false){
+			toggleInformation();
+		}
+		$about.style.display = "block";
+		$credits.style.display = "none";
+		aboutOpen = !aboutOpen;
+		creditsOpen = false;
+	}
+	function showCredits(){
+		if(creditsOpen || informationOpen==false){
+			toggleInformation();
+		}
+		$about.style.display = "none";
+		$credits.style.display = "block";
+		creditsOpen = !creditsOpen;
+		aboutOpen = false;
+	}
+	function toggleInformation(){
+		if(informationOpen){
+			$information.style.height = "0";
+			informationOpen = false;
+		}else{
+			$information.style.height = "260px";
+			informationOpen = true;
+		}
+	}
+</script>
+<script type="text/javascript">
+	//Local Storage
+
+	//For the mobile clinic
+	localStorage.setItem("mobileclinicLocation", "waiting");
+	localStorage.setItem("piece1", "waiting");
+	//For the houses
+	localStorage.setItem("housesLocation", "waiting");
+	localStorage.setItem("piece2", "waiting");
+	//For the goats
+	localStorage.setItem("goatsLocation", "waiting");
+	localStorage.setItem("piece3", "waiting");
+	//For the pep bondye clinic
+	localStorage.setItem("clinicLocation", "waiting");
+	localStorage.setItem("piece4", "waiting");
+
+	localStorage.setItem("mapIntro", "waiting");
+	localStorage.setItem("goatsIntro", "waiting");
+	localStorage.setItem("housesIntro", "waiting");
+	localStorage.setItem("mobileclinicIntro", "waiting");
+	localStorage.setItem("clinicIntro", "waiting");
+
+	localStorage.setItem("animation1", "waiting")
+	localStorage.setItem("animation2", "waiting")
+	localStorage.setItem("animation3", "waiting")
+	localStorage.setItem("animation4", "waiting")
+
+</script>
+</html>

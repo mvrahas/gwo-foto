@@ -1,0 +1,203 @@
+			/*Dashboard*/
+			#dashboard{
+				display: block;
+				opacity: 0;
+				transition: opacity 1s;
+			}
+				.nav-button{
+					position: fixed;
+					width: 80px;
+					height: 80px;
+					top: 0;
+				}
+					#home{right: 0; background: url(../assets/map/home.png); background-size: 80px 80px;}#home:hover{background: url(../assets/map/home$.png); background-size: 80px 80px;}
+					#hhf{right:80px; background: url(../assets/map/hhf.png); background-size: 80px 80px;}#hhf:hover{background: url(../assets/map/hhf$.png); background-size: 80px 80px;}
+					#history{right:160px; background: url(../assets/map/history.png); background-size: 80px 80px;}#history:hover{background: url(../assets/map/history$.png); background-size: 80px 80px;}
+			#title{
+				position: fixed;
+				top: 0;
+				left: 20px;
+				width: 300px;
+				height: auto;
+			}
+			#drag{
+				position: fixed;
+				bottom: 5px;
+				right: 12px;
+				width: 120px;
+				height: 120px;
+				background: url('../assets/map/drag.png');
+				background-size: 100% auto;
+			}
+			#puzzle{
+				position: fixed;
+				bottom: 20px;
+				left: 20px;
+				width: 200px;
+				height: 200px;
+				border-radius: 17px;
+				background: url('../assets/map/empty.png');
+			}
+				.piece{
+					position: absolute;
+					width: 120px;
+					height: 120px;
+					transition: opacity 1s;
+					display: none;
+				}
+					#piece-1{top: 0; right: 0; background: url('../assets/map/piece1.png');opacity: 0;}
+					#piece-1:hover{background: url('../assets/map/piece1$.png')}
+					#piece-2{top: 0; left: 0; background: url('../assets/map/piece2.png'); opacity: 0;}
+					#piece-2:hover{background: url('../assets/map/piece2$.png')}
+					#piece-3{bottom: 0; right: 0; background: url('../assets/map/piece3.png'); opacity: 0;}
+					#piece-3:hover{background: url('../assets/map/piece3$.png')}
+					#piece-4{bottom: 0; left: 0; background: url('../assets/map/piece4.png'); opacity: 0;}
+					#piece-4:hover{background: url('../assets/map/piece4$.png')}
+
+			/*History*/
+			#history-container{
+				position: fixed;
+				top: 50%;
+				margin-top: -340px;
+				margin-left: -300px;
+				left: 50%;
+				width: 600px;
+				height: 680px;
+				display: none;
+				z-index: 100;
+			}
+				#history-image{
+					position: absolute;
+					left: 50px;
+					width: 500px;
+					height: auto;
+				}
+				#history-paragraph{
+					position: absolute;
+					top: 420px;
+					color: white;
+				}
+			/*HHF*/
+			#hhf-container{
+				position: fixed;
+				top: 50%;
+				margin-top:-360px;
+				left: 50%;
+				margin-left:-600px;
+				width: 1242px;
+				height: 720px;
+				z-index: 100;
+				display: none;
+			}
+			#hhf-frame{
+				position: absolute;
+				width: 1200px;
+				height: 720px;
+			}
+
+			/* Donate*/
+			#donate-container{
+				position: fixed;
+				top: 50%;
+				margin-top: -400px;
+				left: 50%;
+				margin-left: -340px;
+				width: 600px;
+				height: 800px;
+				z-index: 100;
+				color: white;
+				display: none;
+			}
+				#donate-title{
+					margin-bottom: 14px;
+				}
+				.choose{
+					opacity:0;
+					transition: opacity 1s;
+				}
+				#focus{
+					margin-top: 30px;
+				}
+				nav{
+					width: 100%;
+					height: 40px;
+					margin-top: 20px;
+					text-align: center;
+				}
+					.end-button{
+						margin: 5px;
+						width: 155px;
+						height: 40px;
+						background: none;
+						color: white;
+						border-radius: 5px;
+						transition: background-color 1s;
+					}
+					.end-button:hover{
+						background: white;
+						color:black;
+					}
+				#puzzle-list{
+					position: relative;
+					width: 520px;
+					height: 200px;
+					margin: 12px auto 0 auto;
+				}
+				.puzzle-box{
+					position: absolute;
+					width: 120px;
+					height: 120px;
+				}
+					#box-1{left:0px;}#box-2{left:140px;}#box-3{left:260px;}#box-4{left:400px;}
+				.contribution-button{
+					width: 54px;
+					height: 28px;
+					background: white;
+					border-radius: 4px;
+				}
+				.contribution-button:hover{
+					background: rgb(200,200,200);
+				}
+				#billing{
+					margin-top: 30px;
+				}
+				#submit{
+					width: 100%;
+					height: 48px;
+					background: white;
+					border-radius: 7px;
+					margin-top: 10px;
+				}
+				#submit:hover{
+					background: rgb(200,200,200);
+				}
+
+
+
+			/*Puzzle Descriptions*/
+			.animation{
+				width: 500px;
+				height: 500px;
+			}
+			.hide{
+				width: 36px;
+				height: 36px;
+				position: absolute;
+				top: 4px;
+				right: 0;
+				background: url('../css/symbols/x.png');
+				background-size: 36px 36px;
+			}
+			.banner{
+				position: fixed;
+				left: 50%;
+				margin-left: -250px;
+				top: 50%;
+				margin-top: -360px;
+				width: 500px;
+				color: white;
+			}
+				#banner-1{display: none;}
+				#banner-2{display: none;}
+				#banner-3{display: none;}
+				#banner-4{display: none;}

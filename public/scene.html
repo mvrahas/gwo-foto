@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Gwo Foto - Explore</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="../css/reset.css">
+		<link rel="stylesheet" type="text/css" href="../css/scene.css">
+		<link rel="stylesheet" type="text/css" href="../css/paragraph-reel.css">
+		<link rel="stylesheet" type="text/css" href="../css/fonts.css">
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="/favicon.ico" type="image/x-icon">
+		<style>
+			#loading {
+				position: fixed;
+				width: 100%;
+				height: 100%;
+				background-color: black;
+				opacity: 1;
+				transition: opacity 1s;
+				z-index: 200;
+			}
+			.lds-ring {
+				display: inline-block;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				width: 80px;
+				height: 80px;
+				margin-top: -40px;
+			}
+			.lds-ring div {
+			  box-sizing: border-box;
+			  display: block;
+			  position: absolute;
+			  width: 64px;
+			  height: 64px;
+			  margin: 8px;
+			  border: 8px solid #fff;
+			  border-radius: 50%;
+			  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+			  border-color: #fff transparent transparent transparent;
+			}
+			.lds-ring div:nth-child(1) {
+			  animation-delay: -0.45s;
+			}
+			.lds-ring div:nth-child(2) {
+			  animation-delay: -0.3s;
+			}
+			.lds-ring div:nth-child(3) {
+			  animation-delay: -0.15s;
+			}
+			@keyframes lds-ring {
+			  0% {
+			    transform: rotate(0deg);
+			  }
+			  100% {
+			    transform: rotate(360deg);
+			  }
+			}
+		</style>
+	</head>
+	<body>
+		<!--Area description-->
+		<div id="paragraph-container">
+			<button id="paragraph-button" onclick="hideParagraph(); addTitleToScene(); startAudio();"></button>
+			<p id="paragraph">
+				The Primary Clinic is located in the hills of Jérémie and is the hub of all the activities at the foundation. The facility opened in <span class="numbers">1988</span> as a dental clinic and has since expanded to include other primary health services such as x-ray, pharmacy, dental, general consultations, family planning, and even mental health. It currently serves over <span class="numbers">120,000</span> patients per year and is funded with private donations. 
+			</p>
+		</div>
+
+		<!--Looping audio for scene ambience-->
+		<audio id="soundtrack" autoplay loop></audio>
+		
+		<!--Video player pops up when user clicks on a thumbnail in the scene-->
+		<div onclick=hideYouTubePlayer() id="video-player-container">
+			<div id="player"></div>
+		</div>
+		<div id="smoke-screen"></div>
+		
+		<div id="loading">
+			<div id="spinner" class="lds-ring"><div></div><div></div><div></div><div></div></div>
+		</div>
+
+		<!--Three Scene - Jon Regnarsson-->
+		<!--https://threejs.org/examples/webgl_panorama_equirectangular.html-->
+		<div id="container"></div>
+
+		<!--Scripts-->
+        <script type="text/javascript" src="../js/scene-config.js"></script>
+		<script>
+			var pathname = window.location.pathname
+			var scene = pathname.replace("/", "")
+			loadScene(scene)
+
+
+			var twoSecondsPassed = false
+			setTimeout(function(){
+				twoSecondsPassed = true
+				hideLoader()
+			}, 2000);
+
+			var pageHasLoaded = false
+			window.onload = function(){ 
+				pageHasLoaded = true
+				hideLoader()
+			}
+
+			var $loader = document.getElementById("loading")
+			var $spinner = document.getElementById("spinner")
+			hideLoader = function () {
+				if (twoSecondsPassed == true & pageHasLoaded == true) {
+					$loader.style.opacity = 0
+					$spinner.style.display = 'none'
+					setTimeout(function() {
+        				$loader.style.display = 'none'
+					}, 1000)
+				}
+			}
+		</script>
+        <script type="text/javascript" src="../js/three.js"></script>
+		<script type="text/javascript" src="../js/three-scene.js"></script>
+		<script type="text/javascript" src="../js/paragraph-reel.js"></script>
+		<script type="text/javascript" src="../js/youtube-iframe-loader.js"></script>
+		<script type="text/javascript" src="../js/show-and-hide-video-player.js"></script>
+        <script type="text/javascript" src="../js/initiate-audio.js"></script>
+	</body>
+</html>
