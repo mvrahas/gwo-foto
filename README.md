@@ -11,9 +11,9 @@ I built this project as the thesis for my degree in Media Arts + Practice. All o
 ## Run The Project
 
 - Clone the repository<br>
-- run npm install<br>
-- run npm start<br>
-- view the project at localhost:3000<br>
+- Run `npm install` in the directory<br>
+- Run `npm start` in the directory<br>
+- Open web browser to `localhost:3000`<br>
 - [Or view the project here](https://gwo-foto.herokuapp.com)
 
 
