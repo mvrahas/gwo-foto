@@ -19,4 +19,6 @@ I built this project as the thesis for my degree in Media Arts + Practice. All o
 
 ## Screenshots
 
-![Test image](https://github.com/mvrahas/gwo-foto/blob/master/public/assets/welcome/gwo-foto-map%401x.png)
+![Map](https://github.com/mvrahas/gwo-foto/blob/master/public/assets/welcome/gwo-foto-map%401x.png)
+![Scene](https://github.com/mvrahas/gwo-foto/blob/master/public/assets/welcome/gwo-foto-scene%401x.png)
+![Puzzle](https://github.com/mvrahas/gwo-foto/blob/master/public/assets/welcome/gwo-foto-puzzle%401x.png)
