@@ -8,16 +8,16 @@ The experience centers around a 3D interactive map of the city of Jeremie, Haiti
 
 I built this project as the thesis for my degree in Media Arts + Practice. All of the content in the experience is original, created by me and the many people I collaborated with to make the project a reality.
 
+[View the project here](https://gwo-foto.herokuapp.com)
+
 ## Run The Project
 
-- Clone the repository<br>
-- Run `npm install` in the directory<br>
-- Run `npm start` in the directory<br>
-- Open web browser to `localhost:3000`<br>
-- [Or view the project here](https://gwo-foto.herokuapp.com)
+1) Clone the repository<br>
+2) Run `npm install` in the directory<br>
+3) Run `npm start` in the directory<br>
+4) Open web browser to `localhost:3000`<br>
 
-
-## Screenshots
+## Preview
 
 ![Map](https://github.com/mvrahas/gwo-foto/blob/master/public/assets/welcome/gwo-foto-map%401x.png)
 ![Scene](https://github.com/mvrahas/gwo-foto/blob/master/public/assets/welcome/gwo-foto-scene%401x.png)
